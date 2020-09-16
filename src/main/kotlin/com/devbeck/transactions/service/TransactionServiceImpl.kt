@@ -33,12 +33,12 @@ class TransactionServiceImpl : TransactionService {
         //Valor da semente utilizado como parametro para função Random, para tornar o seu resultado deterministico
         val seed = firtIntervalTime + id.toLong()
 
-        val tamanhoLista = Random(seed).nextInt(100) + 1
+        val listSize = Random(seed).nextInt(100) + 1
 
         //Lista responsável por armazenar as transações geradas para um @ID em um determinanod mês de um ano
         val list = mutableListOf<Transaction>()
 
-        for (i in 1..tamanhoLista) {
+        for (i in 1..listSize) {
             val transaction = Transaction(
                     id,
                     faker.regexify("([bcdfghjklmnpqrstvxyz][aeiou]){10,120}"),
@@ -61,6 +61,7 @@ class TransactionServiceImpl : TransactionService {
             ((id !in 1000..100000000) && (mes !in 1..12)) -> throw IllegalArgumentException("Informações não permitidas")
             (id !in 1000..100000000) -> throw IllegalArgumentException("O ID informado não é permitido")
             (mes !in 1..12) -> throw IllegalArgumentException("O mês inserido não é permitido")
+
         }
     }
 
