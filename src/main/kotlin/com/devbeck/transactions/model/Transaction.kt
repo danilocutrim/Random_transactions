@@ -1,6 +1,6 @@
-package com.devbeck.transactions.dto
+package com.devbeck.transactions.model
 
-data class TransactionBuildDTO (
+data class Transaction(
         val id: Int,
         val descricao: String,
         val duplicated: Boolean,
