@@ -36,7 +36,7 @@ class ApiTransactionsApplicationTests {
 
 	@Test
 	fun getTimeInterval(){
-		val initdate = LocalDate.of(2020,10,1).atStartOfDay()
+		val initdate = LocalDate.of(2020,2,1).atStartOfDay()
 		val lastday = initdate.with(TemporalAdjusters.lastDayOfMonth()).plusMinutes(1439)
 		val times = Timestamp.valueOf(initdate).time
 		val times2 = Timestamp.valueOf(lastday).time
@@ -49,7 +49,7 @@ class ApiTransactionsApplicationTests {
 	@Test
 	fun test(){
 		val classe = TransactionServiceImpl()
-		val list = classe.generateAleatoryTransactions(5,10,2020)
+		val list = classe.generateAleatoryTransactions(5,1,2020)
 		for(i in list)
 			println(i)
 	}
