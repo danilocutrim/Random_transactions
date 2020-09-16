@@ -15,6 +15,7 @@ import java.util.*
 class TransactionServiceImpl : TransactionService {
 
     override fun generateAleatoryTransactions(id: Int, mes: Int, ano: Int): List<Transaction> {
+        validator(id, mes, ano)
         //Esta variável é responsável por guarda o valor do primeiro dia do mês e ano passados via parametros
         val firstIntervalDate = LocalDate.of(ano, mes, 1).atStartOfDay()
 
@@ -30,7 +31,7 @@ class TransactionServiceImpl : TransactionService {
         val faker = Faker(Random(id.toLong()))
 
         //Valor da semente utilizado como parametro para função Random, para tornar o seu resultado deterministico
-        val seed = firtIntervalTime+id.toLong()
+        val seed = firtIntervalTime + id.toLong()
 
         val tamanhoLista = Random(seed).nextInt(100) + 1
 
@@ -53,5 +54,15 @@ class TransactionServiceImpl : TransactionService {
     override fun updateTranction(transaction: Transaction) {
         TODO("Not yet implemented")
     }
+
+    override fun validator(id: Int, mes: Int, anos: Int) {
+        when {
+
+            ((id !in 1000..100000000) && (mes !in 1..12)) -> throw IllegalArgumentException("Informações não permitidas")
+            (id !in 1000..100000000) -> throw IllegalArgumentException("O ID informado não é permitido")
+            (mes !in 1..12) -> throw IllegalArgumentException("O mês inserido não é permitido")
+        }
+    }
+
 
 }

@@ -14,4 +14,6 @@ interface TransactionService {
 
     fun updateTranction(transaction: Transaction)
 
+    fun validator(id: Int, mes: Int, anos: Int)
+
 }
