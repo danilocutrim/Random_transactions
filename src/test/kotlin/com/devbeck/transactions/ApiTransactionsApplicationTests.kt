@@ -49,7 +49,7 @@ class ApiTransactionsApplicationTests {
 	@Test
 	fun test(){
 		val classe = TransactionServiceImpl()
-		val list = classe.generateAleatoryTransactions(5,1,2020)
+		val list = classe.generateAleatoryTransactions(555555,1,2020)
 		for(i in list)
 			println(i)
 	}
