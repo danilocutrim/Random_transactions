@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("")
+
 class TransactionController {
     @Autowired
     lateinit var service: TransactionServiceImpl
 
+    //Endpoint responsável por uma transação, através de um do id, mes e ano
     @GetMapping(value = ["/{id}/transacoes/{ano}/{mes}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getTransaction(@PathVariable("id") id: Int,
+    fun getTransactionByVariables(@PathVariable("id") id: Int,
                        @PathVariable("ano") ano: Int,
                        @PathVariable("mes") mes: Int
     ): ResponseEntity<List<Transaction>> {
