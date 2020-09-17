@@ -1,5 +1,6 @@
 package com.devbeck.transactions.service
 
+import com.devbeck.transactions.dto.TransactionResponseDTO
 import com.devbeck.transactions.model.Transaction
 
 /*
@@ -10,9 +11,9 @@ e também o tipo de retorno esperado
 
 interface TransactionService {
 
-    fun generateAleatoryTransactions(id: Int, mes: Int, ano: Int): List<Transaction>
+    fun generateAleatoryTransactionsList(id: Int, mes: Int, ano: Int): List<Transaction>
 
-    fun updateTranction(transaction: Transaction)
+    fun addDuplicateTransactionAndMapToDto(id: Int, mes: Int, ano: Int): List<TransactionResponseDTO>
 
     fun validator(id: Int, mes: Int, anos: Int)
 

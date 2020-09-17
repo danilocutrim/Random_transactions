@@ -11,9 +11,11 @@ import java.time.LocalDateTime
 
 @ControllerAdvice
 class ExceptionAdvice : ResponseEntityExceptionHandler() {
+
     @ExceptionHandler(value = [Exception::class])
     fun handleExcepetion(e: Exception, request: WebRequest): ResponseEntity<ExceptionBody> {
         val ourError = ExceptionBody(e.localizedMessage, BAD_REQUEST, LocalDateTime.now())
         return ResponseEntity(ourError, HttpHeaders(), ourError.status)
     }
+
 }
