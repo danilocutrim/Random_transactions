@@ -1,7 +1,7 @@
-package com.devbeck.transactions.service
+package com.devback.transactions.service
 
-import com.devbeck.transactions.dto.TransactionResponseDTO
-import com.devbeck.transactions.model.Transaction
+import com.devback.transactions.dto.TransactionResponseDTO
+import com.devback.transactions.model.Transaction
 import com.github.javafaker.Faker
 import org.springframework.stereotype.Service
 import java.sql.Timestamp

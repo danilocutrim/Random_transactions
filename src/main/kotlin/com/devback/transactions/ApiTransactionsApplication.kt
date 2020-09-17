@@ -1,4 +1,4 @@
-package com.devbeck.transactions
+package com.devback.transactions
 
 import org.springframework.boot.Banner
 import org.springframework.boot.SpringApplication
@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.ComponentScan
 
-@ComponentScan(basePackages = ["com.devbeck.transactions"])
+@ComponentScan(basePackages = ["com.devback.transactions"])
 @EnableAutoConfiguration
 @SpringBootApplication
 class ApiTransactionsApplication

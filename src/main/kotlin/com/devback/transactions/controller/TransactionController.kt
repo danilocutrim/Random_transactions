@@ -1,7 +1,7 @@
-package com.devbeck.transactions.controller
+package com.devback.transactions.controller
 
-import com.devbeck.transactions.model.Transaction
-import com.devbeck.transactions.service.TransactionServiceImpl
+import com.devback.transactions.model.Transaction
+import com.devback.transactions.service.TransactionServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
