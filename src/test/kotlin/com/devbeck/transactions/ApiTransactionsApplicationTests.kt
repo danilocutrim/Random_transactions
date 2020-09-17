@@ -12,46 +12,65 @@ import java.util.*
 
 @SpringBootTest
 class ApiTransactionsApplicationTests {
-	@Test
-	fun faker(){
-		val faker = Faker(Random(24))
-		val rand = Random(24).nextInt(100)+1
-		val list = mutableListOf<Transaction>()
-		for(i in 1..rand){
-			val transaction = Transaction(
-					rand,
-					faker.regexify("([bcdfghjklmnpqrstvxyz][aeiou]){10,120}"),
-					true,
-					faker.number().numberBetween(-9999999,9999999),
-					faker.number().numberBetween(1577836800,1609459199).toLong()
+    @Test
+    fun faker() {
+        val faker = Faker(Random(1))
+        val rand = Random(24).nextInt(100) + 1
+        val list = mutableListOf<Transaction>()
+        for (i in 1..rand) {
+            val transaction = Transaction(
+                    rand,
+                    faker.regexify("([bcdfghjklmnpqrstvxyz][aeiou]){10,120}"),
+                    true,
+                    faker.number().numberBetween(-9999999, 9999999),
+                    faker.number().numberBetween(1577836800, 1609459199).toLong()
 
-			)
-			list.add(transaction)
-		}
-		for(i in list){
+            )
+            list.add(transaction)
+        }
+        for (i in list) {
 
-			println(i.toString())
-		}
-	}
+            println(i.toString())
+        }
+    }
 
-	@Test
-	fun getTimeInterval(){
-		val initdate = LocalDate.of(2020,2,1).atStartOfDay()
-		val lastday = initdate.with(TemporalAdjusters.lastDayOfMonth()).plusMinutes(1439)
-		val times = Timestamp.valueOf(initdate).time
-		val times2 = Timestamp.valueOf(lastday).time
-		println(times2)
-		println(times)
+    @Test
+    fun getTimeInterval() {
+        val initdate = LocalDate.of(2020, 2, 1).atStartOfDay()
+        val lastday = initdate.with(TemporalAdjusters.lastDayOfMonth()).plusMinutes(1439)
+        val times = Timestamp.valueOf(initdate).time
+        val times2 = Timestamp.valueOf(lastday).time
+        println(times2)
+        println(times)
 
 
-	}
+    }
 
-	@Test
-	fun test(){
-		val classe = TransactionServiceImpl()
-		val list = classe.generateAleatoryTransactions(555555,1,2020)
-		for(i in list)
-			println(i)
-	}
+    @Test
+    fun test() {
+        var classe = TransactionServiceImpl()
+        var list = classe.generateAleatoryTransactionsList(555555, 1, 2020)
+
+        var  ac = list[10].copy()
+        println(list.contains(ac))
+        ac.duplicated = true
+        println(list.contains(ac))
+        list.add(ac)
+        println(list.contains(ac))
+        println(Random(2212).nextBoolean())
+        val lista = Array(12){i ->Random(10000000000002*i).nextBoolean()}
+        println(lista[0])
+        lista.forEach { println(it) }
+
+
+
+        var group = list.groupBy {
+
+        }
+
+    }
+
 
 }
+
+
