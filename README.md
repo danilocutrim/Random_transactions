@@ -2,12 +2,19 @@
 ### Back-end-Engineer-GB
 
 ##### Sobre
-##### Link da api 
-
-<https://backend-guiabolso.herokuapp.com>
 
 <p>O projeto é um Mock de uma API de transações</p>
 <p>As transações são geradas com dados aleatórios, com seguinte formato</p>
+
+##### Link da api 
+<https://backend-guiabolso.herokuapp.com>
+
+<p>/{id}/transacao/{ano}/{mes} -GET Retorna uma lista com transações aleatorios para cada mes ano e id </p>
+
+- @params id(number)
+- @params cnpj(number)
+- @params vmld(number)
+
 
 ```
 [
