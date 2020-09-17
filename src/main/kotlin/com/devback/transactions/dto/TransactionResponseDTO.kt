@@ -1,4 +1,4 @@
-package com.devbeck.transactions.dto
+package com.devback.transactions.dto
 
 /*
 classe responsável por modelar o responsebody que

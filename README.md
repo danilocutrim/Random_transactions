@@ -1,6 +1,10 @@
 ### Back-end-Engineer-GB
 
 ##### Sobre
+##### Link da api 
+
+<https://backend-guiabolso.herokuapp.com>
+
 <p>O projeto é um Mock de uma API de transações</p>
 <p>As transações são geradas com dados aleatórios, com seguinte formato</p>
 
@@ -59,12 +63,12 @@ val transaction = Transaction(
 <p>Baixe o repositório:</p>
 
 ```
-https://github.com/danilocutrim/Beck-end-Engineer-GB.git
+https://github.com/danilocutrim/Back-end-Engineer-GB.git
 ```
 <p>Entre no diretorio do projeto </p>
 
 ```
-cd Beck-end-Engineer-GB
+cd Back-end-Engineer-GB
 ```
 <p>Compile o projeto </p>
 

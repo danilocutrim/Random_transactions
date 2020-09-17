@@ -1,4 +1,4 @@
-package com.devbeck.transactions.exception
+package com.devback.transactions.exception
 
 import org.springframework.http.HttpStatus
 import java.time.LocalDateTime
