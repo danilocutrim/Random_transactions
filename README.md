@@ -12,8 +12,8 @@
 <p>/{id}/transacao/{ano}/{mes} -GET Retorna uma lista com transações aleatorios para cada mes ano e id </p>
 
 - @params id(number)
-- @params cnpj(number)
-- @params vmld(number)
+- @params ano(number)
+- @params mes(number)
 
 
 ```
