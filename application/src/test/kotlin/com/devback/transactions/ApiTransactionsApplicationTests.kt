@@ -24,5 +24,3 @@ class ApiTransactionsApplicationTests {
         assert(fakerTransactionList1 != fakerTransactionList2)
     }
 }
-
-
