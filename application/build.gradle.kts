@@ -5,9 +5,7 @@ application {
     mainClass.set("com.devback.transactions.ApiTransactionsApplicationKt")
 }
 
-tasks.withType<Jar> {
-    enabled = false
-}
+
 
 apply(plugin = "org.springframework.boot")
 
