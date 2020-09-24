@@ -6,8 +6,6 @@
 <p>O projeto é um Mock de uma API de transações</p>
 <p>As transações são geradas com dados aleatórios, com seguinte formato</p>
 
-##### Link da api 
-<https://backend-guiabolso.herokuapp.com>
 
 <p>/{id}/transacao/{ano}/{mes} -GET Retorna uma lista com transações aleatorios para cada mes ano e id </p>
 
@@ -101,4 +99,32 @@ docker build . -t transaction-api
 
 ```
 docker run -p 8080:8080 transaction-api
+```
+
+<p>Configurando monitoramento da Aplicação com prometheus</p>
+
+<p>Referencias:
+ https://stackabuse.com/monitoring-spring-boot-apps-with-micrometer-prometheus-and-grafana/</p>
+
+```
+docker pull prom/prometheus
+
+```
+
+```
+docker run -d -p 9090:9090 -v /home/danilo/Workspace/Back-end-Engineer-GB/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+```
+
+```
+docker pull docker pull grafana/grafana
+
+```
+```
+docker pull grafana/grafana
+
+```
+```
+sudo docker run -d -p 3000:3000 grafana/grafana
+
 ```
