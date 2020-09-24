@@ -6,17 +6,10 @@
 <p>O projeto é um Mock de uma API de transações</p>
 <p>As transações são geradas com dados aleatórios, com seguinte formato</p>
 
-<p>/{id}/transacao/{ano}/{mes} -GET Retorna uma lista com transações aleatorios para cada mes ano e id </p>
-
-- @params id(number)
-- @params ano(number)
-- @params mes(number)
-
-
 ```
 [
   {
-     "descricao": "string(10, 120)"
+     "descricao": "string(10, 60)"
      "data": "long(timestamp)"
      "valor": "integer(-9.999.999, 9.999.999)"
      "duplicated": "boolean"
@@ -24,6 +17,35 @@
 ]
 
 ```
+#### Endpoint
+<p>Por pandrão, o server roda na porta 8080, então para acessar deve se ir em:</p>
+<p>localhost:8080/{id}/transacao/{ano}/{mes}</p>
+
+<p>/{id}/transacao/{ano}/{mes} -GET Retorna uma lista com transações aleatorios para cada mes ano e id </p>
+
+- @params id(number)
+- @params ano(number)
+- @params mes(number)
+
+#### Regras de negócio
+
+- dado um `conjunto de dados`, formado por um id de usuário, um ano e um mês, retornar -se uma lista de transações
+- a lista de transações tem`quantidade variável entre os meses`
+- o id de usuário é um `número inteiro` de 1.000 a 100.000.000
+- cada transação tem uma `descrição aleatória legível` no formato string
+- caso o conjunto de transações tenha duas ou mais transações com a `mesma descrição, data e valor`, todas, menos uma, `tem duplicated true`
+- cada descrição tem no mínimo `10 caracteres`
+- cada descrição não supera `60 caracteres`
+- cada transação deve tem um `valor aleatório`
+- o valor da transação é representado por um `número inteiro`
+- o valor da transação tem seus `2 últimos dígitos representando os centavos`
+- um valor de `8989` representa, portanto, `R$ 89,89`
+- o valor da transação esta entre `-9.999.999 e 9.999.999`, inclusive
+- cada transação tem o `timestamp de uma data aleatória` em formato `long`
+- a data aleatória esta `dentro do range de ano e mês` dados
+- dado dois `conjuntos de dados` iguais, as respostas são as mesmas, priorizando um execução deterministica
+
+
 <p>Para a geração dos dados aleatórios, foi utilizado o
   <a href="https://github.com/DiUS/java-faker">JavaFaker</a></p>
   
