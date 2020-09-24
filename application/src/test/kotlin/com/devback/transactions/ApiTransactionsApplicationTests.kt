@@ -16,7 +16,7 @@ class ApiTransactionsApplicationTests {
     }
 
     @Test
-    fun `verifica se as lista diferem entre si`() {
+    fun `verifica se as listas diferem entre si`() {
         val service = TransactionServiceImpl()
         val fakerTransactionList1 = service.generateAleatoryTransactionsList(4555, 12, 2020)
         val fakerTransactionList2 = service.generateAleatoryTransactionsList(4556, 12, 2020)
@@ -24,5 +24,3 @@ class ApiTransactionsApplicationTests {
         assert(fakerTransactionList1 != fakerTransactionList2)
     }
 }
-
-
