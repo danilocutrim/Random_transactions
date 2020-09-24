@@ -43,7 +43,7 @@ class TransactionServiceImpl : TransactionService {
         for (i in 1..listSize) {
             val transaction = Transaction(
                     id,
-                    faker.regexify("([bcçdfghjklmnpqrstvwxyz][aeiou]){10,120}"),
+                    faker.regexify("([bcçdfghjklmnpqrstvwxyz][aeiou]){10,60}"),
                     false,
                     faker.number().numberBetween(-9999999, 9999999),
                     faker.number().numberBetween(firtIntervalTime, secondIntervalTime)
