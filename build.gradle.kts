@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
 	id("org.springframework.boot") version "2.3.3.RELEASE"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
@@ -35,8 +37,13 @@ subprojects{
 	tasks.withType<Test> {
 		useJUnitPlatform()
 	}
-	tasks.withType<Jar> {
-			enabled = true
-	}
+
 }
 
+tasks.getByName<BootJar>("bootJar") {
+	enabled = false
+}
+
+tasks.getByName<Jar>("jar") {
+	enabled = true
+}

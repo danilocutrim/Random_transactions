@@ -1,13 +1,11 @@
 plugins {
     application
 }
+
 application {
     mainClass.set("com.devback.transactions.ApiTransactionsApplicationKt")
 }
 
-
-
-apply(plugin = "org.springframework.boot")
 
 dependencies {
     implementation(project(":core"))
