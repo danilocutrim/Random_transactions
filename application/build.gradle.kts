@@ -1,3 +1,6 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
+
 plugins {
     application
 }
@@ -6,6 +9,7 @@ application {
     mainClass.set("com.devback.transactions.ApiTransactionsApplicationKt")
 }
 
+apply(plugin = "org.springframework.boot")
 
 dependencies {
     implementation(project(":core"))
@@ -23,4 +27,12 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
+}
+
+tasks.getByName<BootJar>("bootJar") {
+    enabled = true
+}
+
+tasks.getByName<Jar>("jar") {
+    enabled = false
 }
