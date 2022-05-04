@@ -136,6 +136,20 @@ docker pull prom/prometheus
 docker run -d -p 9090:9090 -v /home/danilo/Workspace/Back-end-Engineer-GB/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 
 ```
+#!/bin/sh
+LOCAL=$('origin/HEAD')
+for br in `git branch -r`; do
+    echo $br
+    if [[git branch = $LOCAL]];
+    then
+      echo "testeeeee"
+   fi
+    git checkout $br
+    for dir in `git ls-files */`; do
+      echo ${br#*origin/},${dir} >> log.csv
+    done
+    #git ls-files
+done
 
 ```
 docker pull docker pull grafana/grafana
